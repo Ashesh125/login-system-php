@@ -1,0 +1,12 @@
+{
+    "settings": {
+        "name": "Intern Project",
+		"config": {
+            "host_url": "http://localhost/login_",
+			"logo": {
+                "logo_name": "logo.png",
+                "logo_url": "images"            
+            }
+        }
+    }
+}

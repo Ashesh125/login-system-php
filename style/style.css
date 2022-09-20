@@ -1,0 +1,10 @@
+.modal-backdrop {
+    z-index: -1;
+}
+
+#data-table_filter label input ,
+#product-table_filter label input ,
+#location-table_filter label input{
+    
+    background-color: white;
+}

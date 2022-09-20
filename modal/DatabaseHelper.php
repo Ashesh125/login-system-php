@@ -59,4 +59,23 @@ abstract class DatabaseHelper extends Database
         );
         return $resp;
     }
+
+    static function checkOperation($id, $name)
+    {
+        if (($id == 0 || empty($id)) && !empty($name)) {
+            return 1;
+        } else if ($id > 0 && !empty($name)) {
+            return 2;
+        } else if ($id > 0 && empty($name)) {
+            return 3;
+        } else {
+            return 0;
+        }
+    }
+
+
+    public function deleteImage($path)
+    {
+        return unlink($path);
+    }
 }

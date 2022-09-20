@@ -1,6 +1,6 @@
 <?php
-define("HOST", "http://localhost/login_");
-session_start();
+require_once("./components/configure_settings.php");
+
 if (!isset($_SESSION['client'])) {
     $_SESSION['client'] = 0;
 } else {
