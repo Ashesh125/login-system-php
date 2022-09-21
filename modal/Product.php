@@ -107,4 +107,18 @@ class Product extends DatabaseHelper
 			return $stmt->execute();
 		}
 	}
+
+	public function deleteImage()
+	{
+		$sql = "Select image from " . $this->table_name . " WHERE id = :id";
+
+		$stmt = $this->conn->prepare($sql);
+
+		$stmt->bindValue(':id', $this->getId());
+
+		$stmt->execute();
+		$file = $stmt->fetchAll();
+
+		return unlink("../images/products/" . $file[0]['image']);
+	}
 }

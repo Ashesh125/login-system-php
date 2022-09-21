@@ -15,7 +15,7 @@ require("../components/dashboard_nav.php");
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title " id="exampleModalLabel">Add<div class="topic"></div>
+                    <h5 class="modal-title " id="exampleModalLabel">Product Form<div class="topic"></div>
                     </h5>
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

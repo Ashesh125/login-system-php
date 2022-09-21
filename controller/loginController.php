@@ -10,7 +10,7 @@ if ($_POST && $_SESSION['client'] == 0) {
     if ($arr['id'] != 0) {
         $_SESSION['client'] = $arr['id'];
         $_SESSION['name'] = $arr['name'];
-        header("location:./pages/home.php");
+        header("location:../pages/home.php");
     } else {
         header("location:../index.php?err=noAccount");
     }

@@ -24,18 +24,27 @@ class productService
         }
 
         switch (DatabaseHelper::checkOperation($laptop->getId(), $laptop->getName())) {
-            case 1:
+            case "insert":
                 $laptop->insert();
+
                 return true;
                 break;
 
-            case 2:
+            case "update":
+                if (!$laptop->deleteImage()) {
+                    exit("image cannot be deleted!");
+                }
                 $laptop->update();
+
                 return true;
                 break;
 
-            case 3:
+            case "delete":
+                if (!$laptop->deleteImage()) {
+                    exit("image cannot be deleted!");
+                }
                 $laptop->delete();
+
                 return true;
                 break;
 

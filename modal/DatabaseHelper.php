@@ -12,7 +12,7 @@ abstract class DatabaseHelper extends Database
 
     function __construct($table_name)
     {
-        $this->conn =  parent::connect();
+        $this->conn = parent::connect();
         $this->table_name = $table_name;
     }
 
@@ -63,19 +63,13 @@ abstract class DatabaseHelper extends Database
     static function checkOperation($id, $name)
     {
         if (($id == 0 || empty($id)) && !empty($name)) {
-            return 1;
+            return "insert";
         } else if ($id > 0 && !empty($name)) {
-            return 2;
+            return "update";
         } else if ($id > 0 && empty($name)) {
-            return 3;
+            return "delete";
         } else {
             return 0;
         }
-    }
-
-
-    public function deleteImage($path)
-    {
-        return unlink($path);
     }
 }

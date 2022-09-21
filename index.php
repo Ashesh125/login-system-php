@@ -3,7 +3,8 @@ require_once("./components/configure_settings.php");
 
 if (!isset($_SESSION['client'])) {
     $_SESSION['client'] = 0;
-} else {
+} else if ($_SESSION['client'] > 0) {
+    header("location:./pages/home.php");
 }
 
 if ($_GET) {
